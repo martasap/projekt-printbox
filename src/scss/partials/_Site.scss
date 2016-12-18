@@ -1,0 +1,16 @@
+.site{
+  width: 100%;
+}
+
+.filterColumn {
+  width: 15%;
+}
+
+.productListColumn {
+  width: 85%;
+}
+
+.filterColumn, .productListColumn {
+  display: inline-block;
+  vertical-align: top;
+}
