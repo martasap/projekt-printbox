@@ -1,8 +1,8 @@
 import React from 'react'
 
-export default function Orientation() {
+export default function OrientationFilter() {
     return(
-        <div className="orientation">
+        <div className="OrientationFilter">
             Horizontal/vertical
         </div>
     )

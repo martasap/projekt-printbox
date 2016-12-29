@@ -1,16 +1,16 @@
-.site{
+.Site {
   width: 100%;
-}
 
-.filterColumn {
-  width: 15%;
-}
+  .FilterColumn {
+    width: 15%;
+  }
 
-.productListColumn {
-  width: 85%;
-}
+  .ProductListColumn {
+    width: 85%;
+  }
 
-.filterColumn, .productListColumn {
-  display: inline-block;
-  vertical-align: top;
+  .FilterColumn, .ProductListColumn {
+    display: inline-block;
+    vertical-align: top;
+  }
 }

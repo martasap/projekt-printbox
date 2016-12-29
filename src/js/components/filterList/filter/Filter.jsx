@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Filter(props) {
     return (
-        <div className="filter">
+        <div className="Filter">
             <span>{props.name}</span>
             <div>
                 {props.children}

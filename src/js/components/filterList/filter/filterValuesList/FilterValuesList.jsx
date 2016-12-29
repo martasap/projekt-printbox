@@ -1,17 +1,28 @@
 import React from 'react'
+import OrientationFilter from '../orientationFilter/OrientationFilter.jsx'
+import ColorFilter from '../colorFilter/ColorFilter.jsx'
 
 export default function FilterValuesList(props) {
+    let list;
+    if(props.type === 'orientation'){
+        list = <OrientationFilter />
+    }
+    else if(props.type === 'color'){
+        list = <ColorFilter />
+    }
+    else{
+        list = props.filterValues.map((filterValue, index) => (
+            <div>
+                <label><input type={props.type} value={index}/> {filterValue.name}</label>
+                <span className="FilteredProductsNumber">{filterValue.filteredElementsAmount}</span>
+            </div>
+        ))
+    }
     return (
-        <div className="filterValuesList">
+        <div className="FilterValuesList">
             {
-                props.filterValues.map((filterValue, index) => (
-                    <div>
-                        <label><input type={props.type} value={index}/> {filterValue.name}</label>
-                        <span className="filteredProductsNumber">{filterValue.filteredElementsAmount}</span>
-                    </div>
-                ))
+                list
             }
-
         </div>
     )
 }

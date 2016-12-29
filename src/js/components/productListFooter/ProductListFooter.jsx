@@ -3,9 +3,9 @@ import Pagination from '../general/Pagination.jsx'
 
 export default function ProductListFooter() {
     return (
-        <div className="productListFooter">
+        <div className="ProductListFooter">
             <Pagination />
-            <button className="backToTop">Back to top</button>
+            <button className="BackToTop">Back to top</button>
         </div>
     )
 }

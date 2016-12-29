@@ -1,9 +1,14 @@
 import React from 'react'
+import _ from 'lodash'
+import StarIcon from '../../../../public/icons/StarIcon.jsx'
 
-export default function StarRating() {
+export default function StarRating(props) {
+    const activeStars = _.times(props.rate, () => <StarIcon className="StarIconActive" />);
+    const inactiveStars = _.times(5 - props.rate, () => <StarIcon className="StarIconInactive" />);
     return (
-        <span className="starRating">
-            Stars
-        </span>
+        <div className="StarRating">
+            {activeStars}
+            {inactiveStars}
+        </div>
     )
 }

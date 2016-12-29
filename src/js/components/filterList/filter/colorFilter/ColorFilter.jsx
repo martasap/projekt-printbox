@@ -1,12 +1,12 @@
 import React from 'react'
 
-export default function Color() {
+export default function ColorFilter() {
     return(
-        <div className="color">
+        <div className="ColorFilter">
             Choose color(s)
             or
             Use colors from your logo
-            <button className="uploadLogo">UPLOAD LOGO</button>
+            <button className="UploadLogo">UPLOAD LOGO</button>
         </div>
     )
 }
