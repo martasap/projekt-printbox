@@ -1,5 +1,5 @@
 import React from 'react'
-import Product from './product/Product.jsx'
+import Product from './Product.jsx'
 
 export default function ProductList(props) {
     const products = props.productData.map(item => <Product name={item.name} size={item.size}/>);

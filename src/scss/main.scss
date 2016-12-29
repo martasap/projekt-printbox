@@ -1,14 +1,14 @@
 @import "base/Reset";
 @import "base/Normalize";
 @import "partials/Site";
-@import "partials/productListViewSettings/ProductListViewSettings";
+@import "partials/productList/ProductListViewSettings";
 @import "partials/currentFilterInfo/CurrentFilterInfo";
 @import "partials/productList/ProductList";
-@import "partials/productList/product/Product";
+@import "partials/productList/Product";
 @import "partials/filterList/FilterList";
-@import "partials/productListFooter/ProductListFooter";
-@import "partials/filterList/filter/Filter";
-@import "partials/filterList/filter/filterValuesList/FilterValuesList";
+@import "partials/productList/ProductListFooter";
+@import "partials/filterList/Filter";
+@import "partials/filterList/FilterValuesList";
 @import "partials/general/StarRating";
 @import "partials/general/Pagination";
 

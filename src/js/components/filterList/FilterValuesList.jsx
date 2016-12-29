@@ -1,6 +1,6 @@
 import React from 'react'
-import OrientationFilter from '../orientationFilter/OrientationFilter.jsx'
-import ColorFilter from '../colorFilter/ColorFilter.jsx'
+import OrientationFilter from './OrientationFilter.jsx'
+import ColorFilter from './ColorFilter.jsx'
 
 export default function FilterValuesList(props) {
     let list;

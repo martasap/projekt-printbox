@@ -1,6 +1,6 @@
 import React from 'react'
-import StarRating from '../../general/StarRating.jsx'
-import HeartIcon from '../../../../../public/icons/HeartIcon.jsx'
+import StarRating from '../general/StarRating.jsx'
+import HeartIcon from '../../../../public/icons/HeartIcon.jsx'
 
 export default class Product extends React.Component {
     constructor(){

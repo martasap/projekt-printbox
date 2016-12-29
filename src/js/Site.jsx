@@ -2,8 +2,8 @@ import React from 'react'
 import ProductList from './components/productList/ProductList.jsx'
 import CurrentFilterInfo from './components/currentFilterInfo/CurrentFilterInfo.jsx'
 import FilterList from './components/filterList/FilterList.jsx'
-import ProductListFooter from './components/productListFooter/ProductListFooter.jsx'
-import ProductListViewSettings from './components/productListViewSettings/ProductListViewSettings.jsx'
+import ProductListFooter from './components/productList/ProductListFooter.jsx'
+import ProductListViewSettings from './components/productList/ProductListViewSettings.jsx'
 import StarRating from './components/general/StarRating.jsx'
 
 const productData=[

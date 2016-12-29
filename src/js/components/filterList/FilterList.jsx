@@ -1,6 +1,6 @@
 import React from 'react'
-import Filter from './filter/Filter.jsx'
-import FilterValuesList from './filter/filterValuesList/FilterValuesList.jsx'
+import Filter from './Filter.jsx'
+import FilterValuesList from './FilterValuesList.jsx'
 
 export default function FilterList(props) {
     const filterKeys = Object.keys(props.filterListData);
