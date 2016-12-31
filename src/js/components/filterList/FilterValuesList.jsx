@@ -1,28 +1,63 @@
 import React from 'react'
 import OrientationFilter from './OrientationFilter.jsx'
 import ColorFilter from './ColorFilter.jsx'
+import StarRating from '../general/StarRating.jsx'
 
-export default function FilterValuesList(props) {
-    let list;
-    if(props.type === 'orientation'){
-        list = <OrientationFilter />
+export default class FilterValuesList extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            selected: this.props.type === 'radio'
+                ? ''
+                : (this.props.type === 'checkbox' ? [] : null)
+        };
+
+        this.handleChange = this.handleChange.bind(this);
     }
-    else if(props.type === 'color'){
-        list = <ColorFilter />
+
+    handleChange(e) {
+        this.setState({
+            selected: this.props.type === 'radio'
+                ? e.target.value
+                : (this.props.type === 'checkbox'
+                    ? (this.state.selected.indexOf(e.target.value) + 1
+                        ? ([].concat(this.state.selected.slice(0, this.state.selected.indexOf(e.target.value)),
+                            this.state.selected.slice(this.state.selected.indexOf(e.target.value) + 1,this.state.selected.length)))
+                        : this.state.selected.concat(e.target.value))
+                    : null
+            )
+        });
     }
-    else{
-        list = props.filterValues.map((filterValue, index) => (
-            <div>
-                <label><input type={props.type} value={index}/> {filterValue.name}</label>
-                <span className="FilteredProductsNumber">{filterValue.filteredElementsAmount}</span>
-            </div>
-        ))
+
+    componentDidUpdate() {
+        console.log(this.state.selected)
     }
-    return (
-        <div className="FilterValuesList">
-            {
-                list
-            }
-        </div>
-    )
+
+    render() {
+        let filter;
+        if (this.props.type === 'orientation') {
+            filter = <OrientationFilter />
+        }
+        else if (this.props.type === 'color') {
+            filter = <ColorFilter />
+        }
+        else {
+            filter = this.props.filterValues.map((filterValue, index) => (
+                <div>
+                    <label>
+                        <input type={this.props.type} value={index} onChange={this.handleChange} name={this.props.filterKey}/>
+                        <span className="label-text">
+                        {filterValue.name || (filterValue.rate ? <StarRating rate={filterValue.rate}/> : null)}
+                    </span>
+                    </label>
+                    <span className="FilteredProductsNumber">{filterValue.filteredElementsAmount}</span>
+                </div>
+            ))
+        }
+        return (
+            <form className="FilterValuesList">
+                {filter}
+            </form>
+        )
+    }
 }

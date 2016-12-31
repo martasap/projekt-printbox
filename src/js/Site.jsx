@@ -4,7 +4,6 @@ import CurrentFilterInfo from './components/currentFilterInfo/CurrentFilterInfo.
 import FilterList from './components/filterList/FilterList.jsx'
 import ProductListFooter from './components/productList/ProductListFooter.jsx'
 import ProductListViewSettings from './components/productList/ProductListViewSettings.jsx'
-import StarRating from './components/general/StarRating.jsx'
 
 const productData=[
     {name: "Automobil", size: '90x55mm'},
@@ -16,32 +15,37 @@ const productData=[
 ];
 
 const filterListData = {
-    ["OrientationFilter"]: {
+    orientationFilter: {
+        name: 'Orientation',
         type: 'orientation'
     },
-    ["Size"]: {
+    size: {
+        name: 'Size',
         type: 'checkbox',
         filterValues: [
             {name: '90x50mm', filteredElementsAmount: 112},
             {name: '85x55mm', filteredElementsAmount: 67}
         ]
     },
-    ["Customer Rating"]: {
+    customerRating: {
+        name: 'Customer Rating',
         type: 'radio',
         filterValues: [
-            {name: <StarRating rate={4} />, filteredElementsAmount: 83},
-            {name: <StarRating rate={3} />, filteredElementsAmount: 230},
-            {name: <StarRating rate={2} />, filteredElementsAmount: 18},
-            {name: <StarRating rate={1} />, filteredElementsAmount: 66}
+            {rate: 4, filteredElementsAmount: 83},
+            {rate: 3, filteredElementsAmount: 230},
+            {rate: 2, filteredElementsAmount: 18},
+            {rate: 1, filteredElementsAmount: 66}
         ]
     },
-    ["Favorite"]: {
+    favourite: {
+        name: 'Favourite',
         type: 'checkbox',
         filterValues: [
             {name: 'Only favorites', filteredElementsAmount: 22}
         ]
     },
-    ["Industry"]: {
+    industry: {
+        name: 'Industry',
         type: 'checkbox',
         filterValues: [
             {name: 'All', filteredElementsAmount: 840},
@@ -53,10 +57,12 @@ const filterListData = {
             {name: 'Art', filteredElementsAmount: 20}
         ]
     },
-    ["ColorFilter"]: {
+    color: {
+        name: 'Color',
         type: 'color'
     },
-    ["Style"]: {
+    style: {
+        name: 'Style',
         type: 'checkbox',
         filterValues: [
             {name: 'All', filteredElementsAmount: 208},
@@ -75,13 +81,16 @@ const filterListData = {
 export default function Site() {
     return (
         <div className="Site">
-            <div className="FilterColumn">
-                <FilterList filterListData={filterListData}/>
-            </div>
-            <div className="ProductListColumn">
-                <CurrentFilterInfo />
-                <ProductListViewSettings />
-                <ProductList productData={productData} />
+            <div className="Columns">
+                <div className="FilterColumn">
+                    <FilterList filterListData={filterListData}/>
+                </div>
+                <div className="Separator" />
+                <div className="ProductListColumn">
+                    <CurrentFilterInfo />
+                    <ProductListViewSettings />
+                    <ProductList productData={productData} />
+                </div>
             </div>
             <ProductListFooter />
         </div>

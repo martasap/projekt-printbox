@@ -1,16 +1,21 @@
 .Site {
   width: 100%;
 
-  .FilterColumn {
-    width: 15%;
-  }
+  .Columns {
+    display: flex;
+    .FilterColumn {
+      width: 15%;
+    }
 
-  .ProductListColumn {
-    width: 85%;
-  }
+    .Separator {
+      width: 1px;
+      margin: 23px 56px 0 0;
+      height: inherit;
+      background-color: #9b9b9b;
+    }
 
-  .FilterColumn, .ProductListColumn {
-    display: inline-block;
-    vertical-align: top;
+    .ProductListColumn {
+      width: calc(85% - 1px);
+    }
   }
 }

@@ -1,5 +1,46 @@
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+
 .FilterValuesList {
+  font-size: 14px;
   .FilteredProductsNumber {
     float: right;
+  }
+  label{
+    cursor: pointer;
+
+    input[type="checkbox"], input[type="radio"]{
+      display: none;
+
+      + .label-text:before{
+        font-family: FontAwesome;
+        color: #9b9b9b;
+        padding: 0 10px 0 0;
+      }
+
+      &:checked + .label-text:before {
+        color: #56c46a;
+      }
+    }
+    input[type="checkbox"]
+    {
+      display: none;
+
+      + .label-text:before{
+        content: "\f096";
+      }
+      &:checked + .label-text:before {
+        content: "\f14a";
+      }
+    }
+
+    input[type="radio"]
+    {
+      + .label-text:before{
+        content: "\f10c";
+      }
+      &:checked + .label-text:before {
+        content: "\f192";
+      }
+    }
   }
 }
