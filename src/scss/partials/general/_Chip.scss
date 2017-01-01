@@ -1,0 +1,16 @@
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+
+.Chip {
+  padding: 5px 6px 5px 6px;
+  border: solid #c0c0c0 1px;
+  font-family: Helvetica;
+  color: #9b9b9b;
+  margin: 3px;
+  .Cross {
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+    color: black;
+    margin-left: 10px;
+  }
+}

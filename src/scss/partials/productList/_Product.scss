@@ -8,32 +8,32 @@ $unselectedProduct: #686666;
   font-family: Helvetica;
   width: 195px;
   height: 220px;
-  padding: 14px;
+  padding: 14px 14px 40px;
 
-  .HeartIconActive, .HeartIconInactive{
+  .HeartIconActive, .HeartIconInactive {
     width: 22px;
     height: 19px;
     cursor: pointer;
   }
-  .IconRow{
+  .IconRow {
     display: flex;
     justify-content: space-between;
   }
-  p{
+  p {
     font-size: 14px;
   }
-  img{
-    margin: 0 auto;
+  img {
     display: block;
+    margin: 25px auto;
   }
-  h5{
+  h5 {
     font-weight: bold;
     font-size: 18px;
   }
-  p, h5{
+  p, h5 {
     color: $unselectedProduct;
   }
-  h5, img{
+  h5, img {
     cursor: pointer;
   }
   .HeartIconActive {
@@ -43,8 +43,8 @@ $unselectedProduct: #686666;
     fill: $inactiveHeart;
   }
   &:hover {
-    border: solid #56c47a medium;
-    h5{
+    box-shadow: inset 0 0 0 2px #56c47a;
+    h5 {
       color: $selectedProduct;
     }
   }

@@ -8,8 +8,11 @@
 @import "partials/filterList/FilterList";
 @import "partials/filterList/Filter";
 @import "partials/filterList/FilterValuesList";
+@import "partials/filterList/ColorFilter";
+@import "partials/filterList/OrientationFilter";
 @import "partials/general/StarRating";
 @import "partials/general/Pagination";
+@import "partials/general/Chip";
 
 body {
 	background-color: #fff;

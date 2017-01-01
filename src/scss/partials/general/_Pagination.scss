@@ -3,19 +3,16 @@
 $currentPage: #56c47a;
 
 .Pagination {
-  display: inline-block;
-  position: relative;
-  left: 50%;
   color: #9b9b9b;
-  .LeftArrow{
+  .LeftArrow {
     display: none;
     font-family: FontAwesome;
     color: $currentPage;
-    content:"\f053";
+    content: "\f053";
   }
-  .RightArrow{
+  .RightArrow {
     font-family: FontAwesome;
     color: $currentPage;
-    content:"\f054";
+    content: "\f054";
   }
 }

@@ -11,9 +11,9 @@ export default function ProductListViewSettings() {
                     <option value="all">All</option>
                 </select>
             </div>
-            <input type="image" src="icons/grid-four-up-14.ico" border="0" alt="Submit" />
-            <input type="image" src="icons/grid-three-up-14.ico" border="0" alt="Submit" />
-            <input type="image" src="icons/grid-two-up-14.ico" border="0" alt="Submit" />
+            <input type="image" src="icons/grid-four-up-14.ico" alt="4" />
+            <input type="image" src="icons/grid-three-up-14.ico" alt="3" />
+            <input type="image" src="icons/grid-two-up-14.ico" alt="2" />
         </div>
     )
 }

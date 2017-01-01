@@ -2,4 +2,15 @@
   padding: 23px 0 0 0;
   font-size: 14px;
   display: inline-block;
+  .CurrentFilters {
+    display: flex;
+    align-items: baseline;
+    .CurrentFiltersViewWrapper {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+  .NumberOfResults {
+    padding: 0 0 18px 0;
+  }
 }

@@ -1,0 +1,62 @@
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+
+$inactive-filter-color: #dadada;
+$active-filter-color: #56c47a;
+$tick-color: #ffffff;
+
+.OrientationFilter {
+  display: flex;
+  justify-content: space-around;
+  label {
+    display: block;
+    .OrientationInputWrapper {
+      width: 70px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .VerticalFilter {
+    width: 33px;
+    height: 48px;
+  }
+  .HorizontalFilter {
+    width: 48px;
+    height: 33px;
+  }
+  .VerticalFilter, .HorizontalFilter {
+    background-color: $inactive-filter-color;
+    display: block;
+    font-family: FontAwesome;
+  }
+  .HorizontalLabel, .VerticalLabel {
+    text-align: center;
+  }
+  input[type="radio"] {
+    + .OrientationInputWrapper .HorizontalFilter:before,
+    + .OrientationInputWrapper .VerticalFilter:before {
+      display: block;
+    }
+    &:checked + .OrientationInputWrapper .HorizontalFilter:before,
+    &:checked + .OrientationInputWrapper .VerticalFilter:before {
+      content: "\f00c";
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $tick-color;
+      background-color: $active-filter-color;
+    }
+    &:checked + .OrientationInputWrapper .HorizontalFilter:before {
+      width: 48px;
+      height: 33px;
+    }
+    &:checked + .OrientationInputWrapper .VerticalFilter:before {
+      width: 33px;
+      height: 48px;
+    }
+    &:checked ~ .HorizontalLabel, &:checked ~ .VerticalLabel {
+      color: $active-filter-color;
+    }
+  }
+}

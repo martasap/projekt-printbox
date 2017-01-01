@@ -4,7 +4,7 @@ import ColorFilter from './ColorFilter.jsx'
 import StarRating from '../general/StarRating.jsx'
 
 export default class FilterValuesList extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             selected: this.props.type === 'radio'
@@ -16,21 +16,7 @@ export default class FilterValuesList extends React.Component {
     }
 
     handleChange(e) {
-        this.setState({
-            selected: this.props.type === 'radio'
-                ? e.target.value
-                : (this.props.type === 'checkbox'
-                    ? (this.state.selected.indexOf(e.target.value) + 1
-                        ? ([].concat(this.state.selected.slice(0, this.state.selected.indexOf(e.target.value)),
-                            this.state.selected.slice(this.state.selected.indexOf(e.target.value) + 1,this.state.selected.length)))
-                        : this.state.selected.concat(e.target.value))
-                    : null
-            )
-        });
-    }
-
-    componentDidUpdate() {
-        console.log(this.state.selected)
+        this.props.onFilterChange(e, this.props.type)
     }
 
     render() {
@@ -43,12 +29,23 @@ export default class FilterValuesList extends React.Component {
         }
         else {
             filter = this.props.filterValues.map((filterValue, index) => (
-                <div>
+                <div className="FilterValues">
                     <label>
-                        <input type={this.props.type} value={index} onChange={this.handleChange} name={this.props.filterKey}/>
-                        <span className="label-text">
-                        {filterValue.name || (filterValue.rate ? <StarRating rate={filterValue.rate}/> : null)}
-                    </span>
+                        {
+                            this.props.type === 'checkbox'
+                                ? <input
+                                checked={this.props.selected && this.props.selected.indexOf(filterValue.name) + 1}
+                                type={this.props.type} value={filterValue.name || filterValue.rate}
+                                onChange={this.handleChange} name={this.props.filterKey}
+                            />
+                                : <input
+                                type={this.props.type} value={filterValue.name || filterValue.rate}
+                                onChange={this.handleChange} name={this.props.filterKey}
+                            />
+                        }
+                        <span className="LabelContent">
+                            {filterValue.name || (filterValue.rate ? <StarRating rate={filterValue.rate}/> : null)}
+                        </span>
                     </label>
                     <span className="FilteredProductsNumber">{filterValue.filteredElementsAmount}</span>
                 </div>

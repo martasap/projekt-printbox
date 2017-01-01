@@ -7,8 +7,15 @@ export default class CurrentFilterInfo extends React.Component
     {
         return (
             <div className="CurrentFilterInfo">
-                <p>Search results: 72</p>
-                <p>Showing filters: <Chip>Chosen filter</Chip></p>
+                <p className="NumberOfResults">Search results: 72</p>
+                <p className="CurrentFilters">
+                    <p>Showing filters:</p>
+                    <div className="CurrentFiltersViewWrapper">
+                        {
+                            this.props.filters.map(filter => <Chip onClick={this.props.chipFilterClose}>{filter}</Chip>)
+                        }
+                    </div>
+                </p>
                 <div className="verticalLine"/>
             </div>
         )

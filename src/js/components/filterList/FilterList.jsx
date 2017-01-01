@@ -12,6 +12,8 @@ export default function FilterList(props) {
                 filterKeys.map(filterKey =>
                     <Filter name={props.filterListData[filterKey].name}>
                         <FilterValuesList
+                            selected={props.selected}
+                            onFilterChange = {props.filterChange}
                             filterKey = {filterKey}
                             type={props.filterListData[filterKey].type}
                             filterValues={props.filterListData[filterKey].filterValues || null}

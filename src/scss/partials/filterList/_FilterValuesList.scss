@@ -2,45 +2,43 @@
 
 .FilterValuesList {
   font-size: 14px;
+  font-family: Helvetica;
   .FilteredProductsNumber {
     float: right;
+    color: #9b9b9b;
   }
-  label{
+  label {
     cursor: pointer;
-
-    input[type="checkbox"], input[type="radio"]{
+    input[type="checkbox"], input[type="radio"] {
       display: none;
-
-      + .label-text:before{
+      + .LabelContent:before {
         font-family: FontAwesome;
         color: #9b9b9b;
         padding: 0 10px 0 0;
       }
-
-      &:checked + .label-text:before {
+      &:checked + .LabelContent:before {
         color: #56c46a;
       }
     }
-    input[type="checkbox"]
-    {
+    input[type="checkbox"] {
       display: none;
-
-      + .label-text:before{
+      + .LabelContent:before {
         content: "\f096";
       }
-      &:checked + .label-text:before {
+      &:checked + .LabelContent:before {
         content: "\f14a";
       }
     }
-
-    input[type="radio"]
-    {
-      + .label-text:before{
+    input[type="radio"] {
+      + .LabelContent:before {
         content: "\f10c";
       }
-      &:checked + .label-text:before {
+      &:checked + .LabelContent:before {
         content: "\f192";
       }
     }
+  }
+  .FilterValues {
+    padding: 0 0 10px 0;
   }
 }

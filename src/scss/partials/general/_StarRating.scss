@@ -1,16 +1,16 @@
 $active-star-color: #fdd201;
 $inactive-star-color: #dadada;
 
-.StarRating{
-  .StarIconActive, .StarIconInactive{
+.StarRating {
+  .StarIconActive, .StarIconInactive {
     height: 13px;
     width: 13px;
   }
-  .StarIconActive{
+  .StarIconActive {
     fill: $active-star-color;
   }
 
-  .StarIconInactive{
+  .StarIconInactive {
     fill: $inactive-star-color;
   }
 }

@@ -1,5 +1,23 @@
-.Filter{
-  .Filter {
-    color: #383838;
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+
+.Filter {
+  padding: 0 0 40px 0;
+  .FilterHeader {
+    display: flex;
+    justify-content: space-between;
+  }
+  .FilterTitle {
+    color: #9b9b9b;
+    font-family: Helvetica;
+  }
+  .FilterContent {
+    padding: 14px 0 0 0;
+  }
+  .Cross {
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+    color: black;
+    margin-left: 10px;
   }
 }
